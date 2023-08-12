@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import "./App.css";
+import Navbar from "./Components/Navbar";
+import { SubLeftContainer } from "./Components/SubLeftContainer";
+import SubRightContainer from "./Components/SubRightContainer";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div
+        className="overflow-hidden bg-white flex flex-col w-full"
+        id="CodingAssignmentRoot"
+      >
+        <Navbar />
+        <div
+          className="overflow-hidden bg-[#172746] flex flex-col pt-px"
+          id="ContentContainer"
+        >
+          <div
+            className="bg-[url(https://file.rendit.io/n/nxARhtsb0ecjUpSAIO4m.png)] bg-cover bg-50%_50% bg-blend-normal bg-no-repeat relative flex flex-row justify-between items-start pl-[144px] pr-24 py-12"
+            id="BackGround"
+          >
+            <div className="w-1 h-12 origin-top-left rotate-[45deg] bg-white absolute top-[723.957763671875px] left-48 rounded-lg" />
+            <SubLeftContainer />
+            <SubRightContainer />
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
